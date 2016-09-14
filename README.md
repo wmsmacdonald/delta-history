@@ -22,7 +22,7 @@ Maximum size in bytes to store recent file versions on disc. If this is reached,
 ## Class: DeltaHistory
 ### deltaHistory.addVersion(fileId, [file])
 `fileId` String
-`file` Buffer = new Buffer([])
+`file` Buffer = `new Buffer([])`
 
 Returns String `versionId`that identifies the version for this particular file.
 
