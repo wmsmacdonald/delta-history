@@ -36,7 +36,7 @@ Returns String `versionId`that identifies the version for this particular file.
 
 Returns Buffer vcdiff encoded delta with from the version given by versionId to the last file added.
 
-### deltaHistory.getLast(fileId)
+### deltaHistory.getLastVersion(fileId)
 `fileId` String
 Returns Buffer of last file added to the file history given by fileId.
 
