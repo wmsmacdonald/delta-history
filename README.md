@@ -34,11 +34,11 @@ Returns String `versionId`that identifies the version for this particular file.
 `fileId` String
 `versionId` String
 
-Returns Buffer vcdiff encoded delta with from the version given by versionId to the last file added.
+Returns Buffer vcdiff encoded delta with from the version given by versionId to the last file added. If the version isn't in storage (either never added or it was evicted), it returns `null`.
 
 ### deltaHistory.getLastVersion(fileId)
 `fileId` String
-Returns Buffer of last file added to the file history given by fileId.
+Returns Buffer of last file added to the file history given by fileId. If there was no last version, it returns `null`.
 
 ### deltaHistory.clear()
 Deletes all stored files and deltas.
