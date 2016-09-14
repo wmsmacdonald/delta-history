@@ -6,10 +6,11 @@ Keeps version history of file buffers for getting the vcdiff delta between a ver
 * `options` Object
   * `deltaToFileRatio` Number
   * `maxDiscSize` Number
+  * `storageDirectory` String
  
 Returns an instance of `DeltaHistory`.
 
-### options.deltaToFileRatio = 100
+### options.deltaToFileRatio = 10
 Range: all numbers > 0
 
 Ratio of delta intermediaries to full files. Increasing this will reduce storage size at the cost of more CPU calculation.
@@ -18,6 +19,9 @@ Ratio of delta intermediaries to full files. Increasing this will reduce storage
 Range: all integers > 0
 
 Maximum size in bytes to store recent file versions on disc. If this is reached, it will start deleting earlier files. If a single file is too large to fit,  `DeltaHistory.OversizedFileError` will be thrown.
+
+### options.storageDirectory
+Directory that stores persistant file version data. If this is not specified, the version store will be cleared when the package starts again.
 
 ## Class: DeltaHistory
 ### deltaHistory.addVersion(fileId, [file])
