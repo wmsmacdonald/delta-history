@@ -39,3 +39,6 @@ Returns Buffer vcdiff encoded delta with from the version given by versionId to 
 ### deltaHistory.getLast(fileId)
 `fileId` String
 Returns Buffer of last file added to the file history given by fileId.
+
+### deltaHistory.clear()
+Deletes all stored files and deltas.
