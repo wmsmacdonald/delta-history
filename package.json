@@ -26,5 +26,10 @@
     "chai": "^3.5.0",
     "mocha": "^3.0.2",
     "vcdiff": "github:wmsmacdonald/node-vcdiff"
+  },
+  "dependencies": {
+    "json-file": "^0.1.0",
+    "tmp": "0.0.28",
+    "vcdiff": "github:wmsmacdonald/node-vcdiff"
   }
 }

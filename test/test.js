@@ -20,12 +20,12 @@ describe('History', function() {
       assert.typeOf(versionId, 'string');
     });
   });
-  describe('#getLast', function() {
+  describe('#getLastestVersion', function() {
     it('returns the buffer of the last file put it', function() {
       let deltaHistory = createDeltaHistory();
       deltaHistory.addVersion('testFile', new Buffer('some text'));
       deltaHistory.addVersion('testFile', new Buffer('some different text'));
-      let lastVersion = deltaHistory.getLastVersion('testFile').toString();
+      let lastVersion = deltaHistory.getLatestVersion('testFile').toString();
       assert.strictEqual(lastVersion, 'some different text');
     });
   });
@@ -43,13 +43,13 @@ describe('History', function() {
     });
   });
 
-  describe('#clear', function() {
+  describe('#reset', function() {
     it('removes files and deltas so that previous versions are empty', function() {
       let deltaHistory = createDeltaHistory();
       let version1Id = deltaHistory.addVersion('testFile', new Buffer('some text'));
       deltaHistory.addVersion('testFile', new Buffer('some different text'));
-      deltaHistory.clear();
-      assert.isNull(deltaHistory.getLastVersion('testFile'));
+      deltaHistory.reset();
+      assert.isNull(deltaHistory.getLatestVersion('testFile'));
       assert.isNull(deltaHistory.getDelta('testFile', version1Id));
     });
   });
