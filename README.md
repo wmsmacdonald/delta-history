@@ -11,7 +11,7 @@ Keeps version history of file buffers for getting the vcdiff delta between a ver
 Returns an instance of `DeltaHistory`.
 
 ### options.deltaToFileRatio = 10
-Range: all numbers > 0
+Range: all integers > 0
 
 Ratio of delta intermediaries to full files. Increasing this will reduce storage size at the cost of more CPU calculation.
 
