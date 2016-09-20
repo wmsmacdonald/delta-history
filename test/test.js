@@ -46,6 +46,14 @@ describe('History', function() {
       let decoded = vcd.vcdiffDecodeSync(delta, { dictionary: new Buffer(sourceString) });
       assert.strictEqual(decoded.toString(), targetString);
     });
+    it('returns undefined when versionId does not exist', function() {
+      let deltaHistory = createDeltaHistory();
+      let sourceString = 'some text';
+      let targetString = 'some different text';
+      deltaHistory.addVersion('testFile', new Buffer('some text'));
+      let delta = deltaHistory.getDelta('testFile', 'non existent versionid');
+      assert.isNull(delta);
+    });
   });
 
   describe('#reset', function() {
