@@ -19,6 +19,11 @@ describe('History', function() {
       let versionId = deltaHistory.addVersion('testFile', new Buffer('some text'));
       assert.typeOf(versionId, 'string');
     });
+    it('dirty fileId', function() {
+      let deltaHistory = createDeltaHistory();
+      let versionId = deltaHistory.addVersion('/', new Buffer('some text'));
+      assert.typeOf(versionId, 'string');
+    });
   });
   describe('#getLastestVersion', function() {
     it('returns the buffer of the last file put it', function() {
