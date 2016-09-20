@@ -1,8 +1,8 @@
 {
   "name": "delta-history",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Keeps version history of file buffers for getting the vcdiff delta between a version and the latest",
-  "main": "lib/delta_history.js",
+  "main": "lib/create_delta_history.js",
   "scripts": {
     "test": "mocha"
   },
