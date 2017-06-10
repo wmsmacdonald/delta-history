@@ -30,6 +30,17 @@ Directory that stores persistant file version data. If this is not specified, th
 
 Returns String `versionId`that identifies the version for this particular file.
 
+### deltaHistory.hasFile(fileId)
+`fileId` String
+
+Returns true if there is at least one version for the given file, otherwise false.
+
+### deltaHistory.hasVersion(fileId, versionId)
+`fileId` String
+`versionId` String
+
+Returns true if the given version exists for the given file, otherwise false.
+
 ### deltaHistory.getDelta(fileId, versionId)
 `fileId` String
 `versionId` String
